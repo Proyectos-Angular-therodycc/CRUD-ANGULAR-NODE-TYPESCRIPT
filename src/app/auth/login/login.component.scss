@@ -1,0 +1,11 @@
+.background {
+  height: 100vh;
+  background: #0f0c29;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243eaf, #302b63a8, #0f0c2991),url(https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243eaa, #302b63ab, #0f0c2980),url(https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: cover;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}

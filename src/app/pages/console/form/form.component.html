@@ -1,0 +1,72 @@
+<h1 class="text-warning p-3">Console</h1>
+<div class="row">
+  <div class="col-lg-4 offset-lg-1">
+    <div class="card card-body">
+      <form (ngSubmit)="edit ? updateGame() : postGameHttp()">
+        <div class="form-group">
+          <!-- <label for="">Tittle</label> -->
+          <input
+            type="text"
+            name="Tittle"
+            class="form-control"
+            placeholder="Tittle"
+            [(ngModel)]="console._name"
+          />
+          <!-- <small id="helpId" class="text-muted">Game Tittle</small> -->
+        </div>
+        <div class="form-group">
+          <!-- <label for="">Description</label> -->
+          <input
+            type="text"
+            name="Description"
+            class="form-control"
+            placeholder="Description"
+            [(ngModel)]="console._description"
+          />
+          <!-- <small id="helpId" class="text-muted">Game Description</small> -->
+        </div>
+        <div class="form-group">
+          <!-- <label for="">Image</label> -->
+          <input
+            type="text"
+            name="Image"
+            class="form-control"
+            placeholder="Image"
+            [(ngModel)]="console.image"
+          />
+          <!-- <small id="helpId" class="text-muted">Game image </small> -->
+        </div>
+        <button
+          type="submit"
+          [class]="
+            edit ? 'btn btn-warning btn-block' : 'btn btn-success btn-block'
+          "
+        >
+          {{ edit ? "Save" : "Add console" }}
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="col-lg-4 offset-lg-1">
+    <div class="card">
+      <img
+        [src]="
+          console.image ||
+          'https://www.allianceplast.com/wp-content/uploads/no-image.png'
+        "
+        style="height: 150px; object-fit: cover"
+        class="card-img-top"
+        alt=""
+      />
+      <div class="card-body">
+        <h4 class="card-title">
+          {{ console.id || "1" }} {{ console._name || "tittle" }}
+        </h4>
+        <p class="card-text">{{ console._description || "Description" }}</p>
+        <h4 class="card-title">
+          {{ (console.create_at | date: "YYYY/MM/dd") || "YYYY/MM/DD" }}
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>

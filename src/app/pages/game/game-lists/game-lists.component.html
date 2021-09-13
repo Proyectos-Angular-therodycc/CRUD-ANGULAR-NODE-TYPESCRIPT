@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-lg-4" *ngFor="let item of games">
+    <div class="card mt-3">
+      <div class="card-header d-flex justify-between bg-primary" >
+        <button type="button" class="btn btn-danger" (click)="deleteGame(item.id)"><i class="fas fa-user-alt-slash"></i></button>
+        <button type="button" class="btn btn-warning" [routerLink]="['/games/edit/',item.id]"><i class="fas fa-user-edit"></i></button>
+      </div>
+      <img [src]="item.image" style="height: 150px; object-fit: cover" alt="" />
+      <div class="card-body">
+        <h4 class="card-title">{{ item.id }} {{ item.tittle }}</h4>
+        <p class="card-text">{{ item._description }}</p>
+      </div>
+      <div class="card-footer text-muted">
+        <span >{{item.create_at | date:"yyyy-MM-dd"}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
